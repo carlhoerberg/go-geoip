@@ -1,5 +1,5 @@
 /**
- * libgeo.go
+ * geoip.go
  *
  * Copyright (c) 2010, Nikola Ranchev, Torbit (www.torbit.com)
  * All rights reserved.
@@ -27,7 +27,7 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
-package libgeo
+package geopi
 
 // Dependencies
 import (
