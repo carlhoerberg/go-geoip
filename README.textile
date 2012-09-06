@@ -21,6 +21,7 @@ h3. Supported Responses
 
 * CountryCode string (available in all databases)
 * CountryName string (available in all databases)
+* Continent string (available in all databases)
 * City string
 * Region string
 * PostalCode string
@@ -33,14 +34,13 @@ h3. To Do
 * Add test cases and benchmarking
 * Add support for more database formats
 
-h3. Build
-
-make (See Makefile for more details)
-
-h3. Example
-
-./example DBFILE IPADDRESS (i.e. ./example GeoIP.dat 1.1.1.1)
-
 h3. Usage
 
-Please see example.go for a complete example of how to use this library.
+    gi, err := geoip.Load(dbFile)
+    if err != nil {
+      fmt.Printf("Error: %s\n", err.Error())
+      return
+    }
+
+    loc := gi.GetLocationByIP(ipAddr)
+    println(loc.CountryName)
