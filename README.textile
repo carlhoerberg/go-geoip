@@ -35,12 +35,15 @@ h3. To Do
 * Add support for more database formats
 
 h3. Usage
+<pre>
+<code>
+gi, err := geoip.Load(dbFile)
+if err != nil {
+    fmt.Printf("Error: %s\n", err.Error())
+    return
+}
+loc := gi.GetLocationByIP(ipAddr)
+println(loc.CountryName)
 
-    gi, err := geoip.Load(dbFile)
-    if err != nil {
-      fmt.Printf("Error: %s\n", err.Error())
-      return
-    }
-
-    loc := gi.GetLocationByIP(ipAddr)
-    println(loc.CountryName)
+</code>
+</pre>
